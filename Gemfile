@@ -29,6 +29,9 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # Use Unicorn as the app server
 # gem 'unicorn'
 
+# Bootstrap Stylesheet
+gem 'bootstrap-sass', '~> 3.3', '>= 3.3.6'
+
 group :production do
   
   gem 'pg'
