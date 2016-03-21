@@ -32,6 +32,9 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # Bootstrap Stylesheet
 gem 'bootstrap-sass', '~> 3.3', '>= 3.3.6'
 
+# Flexible authentication solution for Rails with Warden.
+gem 'devise', '~> 3.5', '>= 3.5.6'
+
 group :production do
   
   gem 'pg'
