@@ -8,7 +8,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="http://localhost:3000/">Stackers</a>
+      <%= link_to "Stackers", root_path, class: "navbar-brand" %>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
@@ -18,6 +18,7 @@
           <% if user_signed_in? %>
             <li><%= link_to "Home", root_path %></li>
             <li><%= link_to "About me", home_about_path %></li>
+            <li><%= link_to "Edit Profile", edit_user_registration_path %></li>
             <li><%= link_to "Logout", destroy_user_session_path, method: :delete %></li>
           <% else %>
             <li><%= link_to "Home", root_path %></li>

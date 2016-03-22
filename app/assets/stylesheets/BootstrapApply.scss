@@ -2,6 +2,7 @@
 
 $navbar-height: 50px;
 $navbar-default-link-color: #F4F7F8;
+//$navbar-brand-link-color: #667F83;
 
 // Not sure why this rule is not applying yet
 //$navbar-header-background-color: #328E9D;
@@ -16,3 +17,8 @@ $navbar-default-link-color: #F4F7F8;
 .navbar {
   background-color: #328E9D;
 }
+
+
+//.navbar-brand {
+//  color: red;
+//}
