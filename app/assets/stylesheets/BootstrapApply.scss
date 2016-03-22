@@ -1,11 +1,18 @@
 // "bootstrap-sprockets" must be imported before "bootstrap" and "bootstrap/variables"
 
 $navbar-height: 50px;
-$navbar-default-link-color: blue;
+$navbar-default-link-color: #F4F7F8;
+
+// Not sure why this rule is not applying yet
+//$navbar-header-background-color: #328E9D;
 
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
 .center {
   text-align: center;
+}
+
+.navbar {
+  background-color: #328E9D;
 }
