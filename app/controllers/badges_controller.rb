@@ -10,6 +10,7 @@ class BadgesController < ApplicationController
   # GET /badges/1
   # GET /badges/1.json
   def show
+    @badge = Badge.find(params[:id])
   end
 
   # GET /badges/new
@@ -19,6 +20,7 @@ class BadgesController < ApplicationController
 
   # GET /badges/1/edit
   def edit
+    @badge = Badge.find(params[:id])
   end
 
   # POST /badges

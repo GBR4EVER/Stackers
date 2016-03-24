@@ -4,7 +4,7 @@
       <p id="notice"><%= notice %></p>
       
 
-      <table>
+      <table class="table table-striped">
         <thead>
           <tr>
             <th>My Badges</th>
@@ -17,7 +17,6 @@
             <tr>
               <td><%= badge.name %></td>
               <td><%= badge.description %></td>
-              <td><%= link_to 'Show', badge, class: "btn btn-primary" %></td>
               <td><%= link_to 'Edit', edit_badge_path(badge), class: "btn btn-warning" %></td>
               <td><%= link_to 'Destroy', badge, method: :delete, class: "btn btn-danger", data: { confirm: 'Are you sure?' } %></td>
             </tr>
