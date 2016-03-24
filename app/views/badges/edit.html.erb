@@ -1,6 +1,14 @@
-<h1>Editing Badge</h1>
+<div class="panel panel-default">
+  <div class="panel-heading"><h1>Editing | <%= @badge.name %></h1></div>
+    <div class="panel-body">
+      <p id="notice"><%= notice %></p>
 
-<%= render 'form' %>
 
-<%= link_to 'Show', @badge %> |
-<%= link_to 'Back', badges_path %>
+    <%= render 'form' %>
+  </div>
+  
+  <div class="panel-footer">
+    <%= link_to 'Show', @badge %> |
+    <%= link_to 'Back', badges_path %>
+  </div>
+</div>
