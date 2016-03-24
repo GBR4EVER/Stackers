@@ -1,12 +1,17 @@
 <div class="panel panel-default">
-  <div class="panel-body"><h1><%= badge.%></h1></div>
+  <div class="panel-heading"><h1><%= @badge.name %></h1></div>
     <div class="panel-body">
       <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Description:</strong>
-  <%= @badge.description %>
-</p>
-
-<%= link_to 'Edit', edit_badge_path(@badge) %> |
-<%= link_to 'Back', badges_path %>
+      <p>
+        <strong>Description:</strong>
+        <%= @badge.description %>
+      </p>
+      
+    </div>
+  
+  <div class="pabel-footer">
+    <%= link_to 'Edit', edit_badge_path(@badge) %> |
+    <%= link_to 'Back', badges_path %>
+  </div>
+</div>
