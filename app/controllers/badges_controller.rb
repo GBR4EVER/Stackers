@@ -1,5 +1,7 @@
 class BadgesController < ApplicationController
   before_action :set_badge, only: [:show, :edit, :update, :destroy]
+  # before_action :authenticate_user!, except: [:index, :show]
+  # before_action :correct_user, only: [:edit, :update, :destroy]
 
   # GET /badges
   # GET /badges.json
@@ -14,7 +16,7 @@ class BadgesController < ApplicationController
 
   # GET /badges/new
   def new
-    @badge = Badge.new
+    @badge = current_user.badges.build
   end
 
   # GET /badges/1/edit
@@ -71,4 +73,12 @@ class BadgesController < ApplicationController
     def badge_params
       params.require(:badge).permit(:name, :description)
     end
+    
+    def correct_user
+      @badge = current_user.badges.find_by(id: params[:id])
+      redirect_to badges_path, notice: "Not authotized to edit this badge." if @badge.nil?
+    end
+    
 end
+
+
