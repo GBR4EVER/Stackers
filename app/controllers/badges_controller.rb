@@ -1,7 +1,7 @@
 class BadgesController < ApplicationController
   before_action :set_badge, only: [:show, :edit, :update, :destroy]
-  # before_action :authenticate_user!, except: [:index, :show]
-  # before_action :correct_user, only: [:edit, :update, :destroy]
+  before_action :authenticate_user!, except: [:index, :show]
+  before_action :correct_user, only: [:edit, :update, :destroy]
 
   # GET /badges
   # GET /badges.json
@@ -26,7 +26,7 @@ class BadgesController < ApplicationController
   # POST /badges
   # POST /badges.json
   def create
-    @badge = Badge.new(badge_params)
+    @badge = current_user.badges.build(badge_params)
 
     respond_to do |format|
       if @badge.save
@@ -42,6 +42,8 @@ class BadgesController < ApplicationController
   # PATCH/PUT /badges/1
   # PATCH/PUT /badges/1.json
   def update
+    @badge.update(badge_params)
+    
     respond_to do |format|
       if @badge.update(badge_params)
         format.html { redirect_to @badge, notice: 'Badge was successfully updated.' }
@@ -57,6 +59,7 @@ class BadgesController < ApplicationController
   # DELETE /badges/1.json
   def destroy
     @badge.destroy
+    
     respond_to do |format|
       format.html { redirect_to badges_url, notice: 'Badge was successfully destroyed.' }
       format.json { head :no_content }
@@ -74,11 +77,9 @@ class BadgesController < ApplicationController
       params.require(:badge).permit(:name, :description)
     end
     
-    def correct_user
-      @badge = current_user.badges.find_by(id: params[:id])
-      redirect_to badges_path, notice: "Not authotized to edit this badge." if @badge.nil?
-    end
-    
 end
 
-
+def correct_user
+  @badge = current_user.badges.find_by(id: params[:id])
+  redirect_to badges_path, notice: "Not authotized to edit this badge." if @badge.nil?
+end
