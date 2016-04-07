@@ -4,6 +4,10 @@
       <p id="notice"><%= notice %></p>
 
       <p>
+        <%= image_tag @badge.image.url(:medium) %>
+      </p>
+      
+      <p>
         <strong>Description:</strong>
         <%= @badge.description %>
       </p>

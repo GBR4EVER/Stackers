@@ -41,6 +41,9 @@ gem 'bootstrap-sass', '~> 3.3', '>= 3.3.6'
 # Flexible authentication solution for Rails with Warden.
 gem 'devise', '~> 3.5', '>= 3.5.6'
 
+# Easy upload management for ActiveRecord
+gem 'paperclip', '~> 4.3', '>= 4.3.6'
+
 group :production do
   
   gem 'pg'

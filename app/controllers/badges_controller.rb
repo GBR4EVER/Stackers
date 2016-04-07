@@ -65,7 +65,13 @@ class BadgesController < ApplicationController
       format.json { head :no_content }
     end
   end
-
+  
+  def correct_user
+    @badge = current_user.badges.find_by(id: params[:id])
+    redirect_to badges_path, notice: "Not authotized to edit this badge." if @badge.nil?
+  end
+  
+  
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_badge
@@ -74,12 +80,8 @@ class BadgesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def badge_params
-      params.require(:badge).permit(:name, :description)
+      params.require(:badge).permit(:name, :description, :image)
     end
     
 end
 
-def correct_user
-  @badge = current_user.badges.find_by(id: params[:id])
-  redirect_to badges_path, notice: "Not authotized to edit this badge." if @badge.nil?
-end
