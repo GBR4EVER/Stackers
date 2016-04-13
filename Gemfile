@@ -51,7 +51,7 @@ group :production do
   
   gem 'pg'
   # postgres
-  # gem 'rails12factor'
+  gem 'rails_12factor'
   # Not sure what this does
 end
 
