@@ -44,6 +44,9 @@ gem 'devise', '~> 3.5', '>= 3.5.6'
 # Easy upload management for ActiveRecord
 gem 'paperclip', '~> 4.3', '>= 4.3.6'
 
+# The official AWS SDK for Ruby. Provides both resource oriented interfaces and API clients for AWS services.
+gem 'aws-sdk', '~> 2.2', '>= 2.2.34'
+
 group :production do
   
   gem 'pg'

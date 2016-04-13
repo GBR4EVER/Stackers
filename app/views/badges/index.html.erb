@@ -15,6 +15,7 @@
         <tbody>
           <% @badges.each do |badge| %>
             <tr>
+              <!-- TODO Figure out how to select the image to view the show.html page -->
               <td><%= image_tag badge.image.url(:thumb) %></td>
               <td><%= badge.name %></td>
               <td><%= badge.description %></td>
