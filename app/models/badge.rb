@@ -11,4 +11,8 @@ class Badge < ActiveRecord::Base
   
   # Validate the attached image is image/jpg, image/png, etc.
   validates_attachment_content_type :image, :content_type => /\Aimage\/.*\Z/
+  
+  def s3_credentials
+      {:bucket => "stackers21", :access_key_id => "AKIAJTF4DDD5VE4P43QA", :secret_access_key => "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"}
+  end
 end
