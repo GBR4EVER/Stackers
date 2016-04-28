@@ -30,8 +30,6 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # Debugger gem
 gem 'pry'
 
-gem 'pg'
-
 # Use Unicorn as the app server
 # gem 'unicorn'
 
@@ -49,10 +47,12 @@ gem 'aws-sdk', '~> 2.2', '>= 2.2.34'
 
 group :production do
   
-  gem 'pg'
   # postgres
-  gem 'rails_12factor'
+  gem 'pg'
+  
   # Not sure what this does
+  gem 'rails_12factor'
+  
 end
 
 # Use Capistrano for deployment
@@ -64,7 +64,8 @@ group :development, :test do
   # Access an IRB console on exception pages or by using <%= console %> in views
   gem 'web-console', '~> 2.0'
   
-  gem 'sqlite3'
+  #Postrgres
+  gem 'pg'
 
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
