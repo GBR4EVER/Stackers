@@ -18,7 +18,7 @@
           <% if user_signed_in? %>
             <li><%= link_to "Home", root_path %></li>
             <li><%= link_to "About", home_about_path %></li>
-            <li><%= link_to "My Badges", badges_path %></li>
+            <li><%= link_to "Badges", badges_path %></li>
             <li><%= link_to "New Badge", new_badge_path %></li>
             <li><%= link_to "Edit Profile", edit_user_registration_path %></li>
             <li><%= link_to "Logout", destroy_user_session_path, method: :delete %></li>
