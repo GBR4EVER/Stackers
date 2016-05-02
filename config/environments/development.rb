@@ -42,13 +42,4 @@ Rails.application.configure do
   # Added as per Devise installation structures
   config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
   
-  # aws-sdk storage destination for heroku.
-  config.paperclip_defaults = {
-    :storage => :s3,
-    :s3_credentials => {
-      :bucket => ENV['stacker16'],
-      :access_key_id => ENV['AKIAJ5PMCC27OLW3T7OA'],
-      :secret_access_key => ENV['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']
-    }
-  }
 end
