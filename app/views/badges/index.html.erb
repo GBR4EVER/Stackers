@@ -21,7 +21,7 @@
               <td><%= badge.user.email if badge.user %></td>
               <% if badge.user == current_user %>
                 <td><%= link_to 'Edit', edit_badge_path(badge), class: "btn btn-warning" %></td>
-                <td><%= link_to 'Destroy', badge, method: :delete, class: "btn btn-danger", data: { confirm: 'Are you sure?' } %></td>
+                <td><%= link_to 'Delete', badge, method: :delete, class: "btn btn-danger", data: { confirm: 'Are you sure?' } %></td>
               <% end %>  
             </tr>
           <% end %>
