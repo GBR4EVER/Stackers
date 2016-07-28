@@ -45,18 +45,11 @@ gem 'paperclip', '~> 4.3', '>= 4.3.6'
 # The official AWS SDK for Ruby. Provides both resource oriented interfaces and API clients for AWS services.
 gem 'aws-sdk', '~> 2.2', '>= 2.2.34'
 
-group :production do
-  
-  # postgres
-  gem 'pg'
-  
-  # Not sure what this does
-  gem 'rails_12factor'
-  
-end
+# JQuery Turbo Links for Jquery masonry.
+gem 'jquery-turbolinks'
 
-# Use Capistrano for deployment
-# gem 'capistrano-rails', group: :development
+# Masonry stlying.
+gem 'masonry-rails', '~> 0.2.4'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -67,5 +60,17 @@ group :development, :test do
   gem 'pg'
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
+
+  # Use Capistrano for deployment
+  # gem 'capistrano-rails', group: :development
 end
 
+group :production do
+  
+  # postgres
+  gem 'pg'
+  
+  # Not sure what this does
+  gem 'rails_12factor'
+  
+end
